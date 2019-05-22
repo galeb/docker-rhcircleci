@@ -20,6 +20,7 @@ RUN yum update -y \
     && groupadd --gid 3434 circleci \
     && useradd --uid 3434 --gid circleci --shell /bin/bash --create-home circleci \
     && yum install -y sudo \
+    && yum install -y git \
     && yum clean all \
     && echo 'circleci ALL=NOPASSWD: ALL' >> /etc/sudoers.d/50-circleci
 
